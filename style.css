@@ -1,7 +1,45 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#etch-a-sketch {
+    margin-top: 5rem;
+    padding: 2rem 5rem;
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ff1f1f;
+}
+
 #tile-container {
     display: grid;
-    width: 480px; 
-    height: 480px;
+    width: 700px; 
+    height: 500px;
     background-color: ghostwhite;
-    border-style: solid 5px black; 
+    border-style: solid;
+    border-radius: 1%;
+
+}
+
+.controls-container {
+    display: flex;
+}
+
+.slide-container {
+    display: flex;
+    margin-right: 10rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-left: 10rem;
 }
