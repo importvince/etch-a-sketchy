@@ -22,22 +22,24 @@ const sliderReader = document.getElementById('slider-reader');
 sliderReader.textContent = slider.value;
 
 slider.oninput = function() {
-    sliderReader.textContent = this.value;
+    sliderReader.textContent = `${this.value} X ${this.value}`;
 }
 
 //createBoard(); // need an event listener on the slider to create the board size accordingly
 
 slider.addEventListener('change', createBoard);
 
+
 function createBoard() {
-    let sliderValue = slider.value;
     const style = document.createElement('style');
+
     // add style to board
     // ** somehow need hover effect to stay 
     style.innerHTML = `
     #tile-container {
-        grid-template-columns: repeat(${sliderValue}, 1fr);
-        grid-template-rows: repeat(${sliderValue}, 1fr);
+        grid-template-columns: repeat(${slider.value}, 1fr);
+        grid-template-rows: repeat(${slider.value}, 1fr);
+
     }
     #tile-container > div:hover { 
         background-color: black;
@@ -45,7 +47,9 @@ function createBoard() {
     `
     document.head.appendChild(style);
 
-    for (let i = 0; i < (sliderValue*sliderValue); i++) {
+    const gridSize = slider.value * slider.value;
+
+    for (let i = 0; i < gridSize; i++) {
         const tile = document.createElement('div');
         tile.style.height = "1fr";
         container.appendChild(tile);

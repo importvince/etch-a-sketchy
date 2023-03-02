@@ -10,7 +10,7 @@ body {
 
 #etch-a-sketch {
     margin-top: 5rem;
-    padding: 2rem 5rem;
+    padding: 2rem 2rem;
     border-style: solid;
     border-color: black;
     border-width: 3px;
@@ -29,8 +29,8 @@ body {
 
 #tile-container {
     display: grid;
-    width: 700px; 
-    height: 500px;
+    width: 600px; 
+    height: 600px;
     background-color: ghostwhite;
     border-style: solid;
     border-radius: 1%;
@@ -40,18 +40,33 @@ body {
 .controls-container {
     display: flex;
     align-items: center;
+    margin-top: 25px;
 }
 
 .slide-container {
     display: flex;
-    margin-right: 10rem;
+    flex-direction: column;
 }
 
 .buttons {
     display: flex;
-    justify-content: space-between;
     gap: 20px;
     margin-left: 10rem;
+}
+
+.buttons > #boring,
+.buttons > #pretty {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.buttons > #reset {
+    height: 20px;
+    width: auto;
+    background-color: black;
+    color: white;
+    align-self: center;
 }
 
 h1 {
@@ -82,4 +97,74 @@ h1 {
 #screen {
     margin-left: 50px;
     font-style: italic;
+}
+
+#myRange {
+    margin: auto;
+    -webkit-appearance: none; /* turns slider backdrop rectangle */
+    position: relative;
+    overflow: hidden;
+    height: 20px;
+    width: 125px;
+    cursor: pointer; /* google other pointer types! */
+}
+
+::-webkit-slider-runnable-track {
+    background: #ddd; /* colors inside of slide bar */
+}
+
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 20px;
+    background: #fff;
+    box-shadow: -200px 0 0 200px rgb(255, 194, 41);
+    border: 2px solid #999;
+}
+
+::-moz-range-track {
+    height: 20px;
+    background: #ddd;
+}
+
+::-moz-range-thumb {
+    background: #fff;
+    height: 20px;
+    width: 10px;
+    border: 3px solid #999;
+    border-radius: 0 !important;
+    box-shadow: -200px 0 0 200px rgb(255, 194, 41);
+    box-sizing: border-box;
+}
+
+::-ms-fill-lower {
+    background: rgb(255, 194, 41);
+}
+
+::-ms-thumb {
+    background: #fff;
+    border: 2px solid #999;
+    height: 20px;
+    width: 10px;
+    box-sizing: border-box;
+}
+
+/* copy and pasted from https://codepen.io/noahblon/pen/OyajvN */
+::-ms-ticks-after { 
+    display: none; 
+}
+
+::-ms-ticks-before { 
+    display: none; 
+}
+
+::-ms-track { 
+    background: #ddd;
+    color: transparent;
+    height: 40px;
+    border: none;
+}
+
+::-ms-tooltip { 
+    display: none;
 }
