@@ -25,7 +25,7 @@ slider.oninput = function() {
     sliderReader.textContent = `${this.value} X ${this.value}`;
 }
 
-//createBoard(); // need an event listener on the slider to create the board size accordingly
+createBoard(); // need an event listener on the slider to create the board size accordingly
 
 slider.addEventListener('change', createBoard);
 
@@ -40,11 +40,7 @@ function createBoard() {
         grid-template-columns: repeat(${slider.value}, 1fr);
         grid-template-rows: repeat(${slider.value}, 1fr);
 
-    }
-    #tile-container > div:hover { 
-        background-color: black;
-    }
-    `
+    }`
     document.head.appendChild(style);
 
     const gridSize = slider.value * slider.value;
@@ -53,5 +49,8 @@ function createBoard() {
         const tile = document.createElement('div');
         tile.style.height = "1fr";
         container.appendChild(tile);
+        tile.addEventListener('mouseover',() => {
+            tile.style.backgroundColor = 'black'
+        })
     }
 }
